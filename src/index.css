@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: 220 40% 10%;
+  --gold: 45 100% 50%;
+  --text-primary: 220 40% 98%;
+  --text-secondary: 220 40% 70%;
+}
+
+@layer base {
+  body {
+    @apply bg-[hsl(var(--navy))] text-white font-sans antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Markdown content styling */
+.prose {
+  color: hsl(var(--text-primary));
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: white;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h1 {
+  font-size: 2.25em;
+}
+
+.prose h2 {
+  font-size: 1.875em;
+}
+
+.prose h3 {
+  font-size: 1.5em;
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  color: hsl(var(--text-secondary));
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+  color: hsl(var(--text-secondary));
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose code {
+  color: hsl(var(--gold));
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+}
+
+.prose pre {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid hsl(var(--gold));
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: hsl(var(--text-secondary));
+  font-style: italic;
+}

@@ -1,0 +1,35 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  # Environment variables are configured in Netlify UI
+
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+    baseUrl = "https://studentvisaai.com"
+    changeFreq = "daily"
+    priority = 0.8
+    trailingSlash = false
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Force HTTPS
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"

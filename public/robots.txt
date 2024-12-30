@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /auth/
+
+Allow: /blog/
+Allow: /resources/
+Allow: /visa-types/
+Allow: /eligibility-check/
+
+# Remove crawl delay to allow faster indexing
+
+# Sitemap location
